@@ -2,11 +2,11 @@
 
 This repository contains the modifications necessary for a Shopify, Auth0 and Discourse customer integration, without Shopify Multipass. The Discourse piece of this is optional; you could implement just the Shopify and Auth0 parts and they will work by themselves.
 
+> :warning: You should conduct your own security review before implementing the approach offered in this repository.
+
 The original use of this code was for a community that used Shopify to sell premium content that could be accessed in private Discourse categories. You may need to tweak some of this implementation to support different use cases.
 
 Please note that Shopify does have an in-built SSO mechanism for customers called "Multipass", available to Shopify Plus customers. If you can afford Shopify Plus, you should use Multipass instead of this.
-
-> :warning: You should conduct your own security review before implementing this approach.
 
 ## Shopify Setup
 
