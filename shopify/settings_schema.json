@@ -1,0 +1,19 @@
+// insert as a new setting block in settings_schema.json
+
+{
+  "name": {
+    "en": "Auth0"
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "auth0_domain",
+      "label": "Auth0 Domain"
+    },
+    {
+      "type": "text",
+      "id": "auth0_client_id",
+      "label": "Auth0 Shopify Client Id"
+    }
+  ]
+}

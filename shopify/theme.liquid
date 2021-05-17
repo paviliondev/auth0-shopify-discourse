@@ -1,0 +1,28 @@
+<head>
+  <!-- add below existing scripts -->
+  {{ 'auth0.scss' | asset_url | stylesheet_tag }}
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js" defer="defer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js" defer="defer"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- include jquery if not already present -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<!-- add customer conditional to body class -->
+<body class="{% if customer %}customer{% else %}guest{% endif %}">  
+
+  <!-- add at top of body -->
+  {{ 'auth0.js' | asset_url | script_tag }}
+  <div class="auth0-account-message">
+    <a class="hide-account-message"><i class="fa fa-times"></i></a>
+    <svg id="spinner-large" aria-hidden="true" focusable="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-270 364 66 66">
+        <path d="M-237 428c-17.1 0-31-13.9-31-31s13.9-31 31-31v-2c-18.2 0-33 14.8-33 33s14.8 33 33 33 33-14.8 33-33h-2c0 17.1-13.9 31-31 31z"></path>
+      </svg>
+    </svg>
+    <div class="text"></div>
+  </div>
+  <!-- end -->
+
+</body>

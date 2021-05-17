@@ -1,0 +1,124 @@
+.auth0-account-message {
+  display: flex;
+  flex-flow: column;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  font-weight: 600;
+  color: #333;
+}
+
+.auth0-account-message a {
+  display: none;
+  margin-left: 5px;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #333;
+}
+
+.auth0-account-message a.hide-account-message {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  text-decoration: none;
+}
+
+.auth0-account-message.show-hide a.hide-account-message {
+  display: block;
+}
+
+.auth0-account-message.full-page {
+  background-color: #042f75;
+}
+
+.auth0-account-message.full-page .text {
+  font-size: 20px;
+  color: #fff;
+  
+  @media (max-width: 480px) {
+    margin-bottom: 20px;
+  }
+}
+
+.auth0-account-message.full-page.show-hide a.hide-account-message {
+  font-size: 30px;
+}
+  
+.auth0-account-message.account-message {
+  background-color: blue;
+  border-bottom: 1px solid lightgray;
+}
+
+.auth0-account-message.account-message .text {
+  color: white;
+}
+
+body.template-customers\/login .auth0-account-message {
+  display: block;
+  height: 100vh;
+}
+
+.auth0-account-message.danger {
+  background-color: red;
+}
+
+.auth0-account-message.verification {
+  background-color: rgba(49, 55, 61, 0.9);
+}
+
+.auth0-account-message.verification .text {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 480px) {
+  .auth0-account-message.verification .text {
+    padding: 0 30px;
+  }
+}
+
+.auth0-account-message.verification a,
+.auth0-account-message.verification p,
+.auth0-account-message.verification h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-flow: wrap;
+  z-index: 1;
+  color: white;
+}
+
+.auth0-account-message.verification h1 {
+  font-size: 2em;
+}
+
+.auth0-account-message.verification p {
+  font-size: 1.2em;
+}
+
+.auth0-account-message #spinner-large {
+  display: none;
+  fill: white;
+  width: 64px;
+  height: 64px;
+  animation: spin 0.5s linear infinite;
+  margin-bottom: 1.5em;
+}
+
+.auth0-account-message.show-spinner #spinner-large {
+  display: block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

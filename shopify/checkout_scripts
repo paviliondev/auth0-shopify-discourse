@@ -1,0 +1,32 @@
+<script>
+  {% assign redirect_to = "" %}
+  {% assign show_cta = false %}
+
+  {% for item in checkout.order.line_items %}
+    {% if item.product.tags contains 'discourse' %}
+      {% capture redirect_to %}{{ item.product.metafields.discourse.redirect_to }}{% endcapture %}
+      {% assign show_cta = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if show_cta %}
+    Shopify.Checkout.OrderStatus.addContentBox(
+      '<a href="https://{{ discourse_domain }}/{{ redirect_to }}" class="btn full-width">Access your content</a>'
+    )
+  {% endif %}
+</script>
+
+<style>
+  .step__footer__continue-btn {
+    display: none;
+  }
+  .btn.full-width {
+     width: 100%;
+  }
+</style>
+
+// Notes //
+
+You must update the following values before using this snippet:
+
+- discourse_domain: the domain of the Discourse instance
